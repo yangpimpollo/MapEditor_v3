@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\prime">
+      <UniqueIdentifier>{c4d743d5-5f84-439d-8319-a20e2b64acb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\prime">
+      <UniqueIdentifier>{7c7a71dc-bc30-4544-8256-6fe20deb97bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\rooms">
+      <UniqueIdentifier>{d5471957-4688-4ac1-af0f-b2842d4c1fab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\util">
+      <UniqueIdentifier>{51e4066c-92ff-4d4a-a895-edb316d1fb9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{07825b55-31de-4e2c-8242-1cf7664bfdf8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\game_core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\prime\ResourceManager.cpp">
+      <Filter>Source Files\prime</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\prime\Window.cpp">
+      <Filter>Source Files\prime</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\prime\Debug.cpp">
+      <Filter>Source Files\prime</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\game_core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\prime\Window.h">
+      <Filter>Header Files\prime</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\prime\ResourceManager.h">
+      <Filter>Header Files\prime</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\prime\Debug.h">
+      <Filter>Header Files\prime</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\MapEditor_v2\MapEditor_v2\rooms\global.room">
+      <Filter>Resource Files\rooms</Filter>
+    </None>
+    <None Include="..\..\MapEditor_v2\MapEditor_v2\rooms\scene1.room">
+      <Filter>Resource Files\rooms</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+
+<!---->
+<!--  ............... this is a comment ............... -->
+<!---->
+
+<room name='scene1'>
+
+	<texture id='pixel1' dat='pixel1.jpg' />
+	<texture id='pixel2' dat='pixel2.jpeg' />
+	<texture id='pixel3' dat='pixel3.jpg' />
+	<texture id='pixel4' dat='pixel4.jpg' />
+	<texture id='pixel5' dat='pixel5.jpg' />
+	<texture id='tex1' dat='tex1.jpg' />
+	<texture id='tex2' dat='tex2.png' />
+	<texture id='tex3' dat='tex3.png' />
+	<texture id='coin' dat='coin.png' />
+	
+	<object id='_@glRuS233' x='200' y='200' z='200' w='100' h='100' tex='pixel5' />
+	<object id='_@apluSw4Q' x='200' y='300' z='300' w='100' h='100' tex='tex1' />
+	<object id='_@0lwRR12a' x='200' y='400' z='400' w='100' h='100' tex='tex2' />
+	<object id='_@LL1S234R' x='200' y='500' z='500' w='100' h='100' tex='tex3' />
+
+	<!--<sound id='momm' dat='momm.wav' />-->
+	<!--<sound id='ff' dat='ff.wav' />-->
+	<!--<sound id='start' dat='start.ogg' />-->
+
+</room>

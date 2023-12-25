@@ -1,0 +1,25 @@
+
+<!---->
+<!--  ............... this is a comment ............... -->
+<!---->
+
+<room name='global'>
+
+	<font id='CascadiaMono300' dat='Cascadia Mono PL Light 300.otf' />
+	<font id='cwTeXQFangsong' dat='cwTeXQFangsong-Medium.ttf' />
+	<font id='SourceHanSerifTC' dat='SourceHanSerifTC-ExtraLight.otf' />
+
+	<texture id='icon' dat='icon.png' />
+	<texture id='icon_b' dat='icon_b.png' />
+	<texture id='cursor' dat='cursor.png' />
+	<texture id='map' dat='map.jpg' />
+	<texture id='cube' dat='cube.png' />
+	<texture id='pixel5' dat='pixel5.jpg' />
+	<texture id='close1' dat='close1.png' />
+	<texture id='close2' dat='close2.png' />
+
+	<string id='title' EN='Dragon_Knight' ZH='龍騎士' SP='Caballero_Dragón' />
+	<string id='continue' EN='continue' ZH='繼續' SP='continuar' />
+	<string id='new game' EN='new game' ZH='新游戲 2 bio' SP='nueva partida' />
+
+</room>
