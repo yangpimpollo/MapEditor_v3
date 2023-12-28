@@ -145,16 +145,25 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\game_core.cpp" />
+    <ClCompile Include="Source\phykit\AEditTool.cpp" />
+    <ClCompile Include="Source\phykit\AShape.cpp" />
     <ClCompile Include="Source\prime\Debug.cpp" />
+    <ClCompile Include="Source\prime\ObjectManager.cpp" />
     <ClCompile Include="Source\prime\ResourceManager.cpp" />
+    <ClCompile Include="Source\prime\Tester1.cpp" />
     <ClCompile Include="Source\prime\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\game_core.h" />
+    <ClInclude Include="Header\phykit\AEditTool.h" />
+    <ClInclude Include="Header\phykit\AEntity.h" />
+    <ClInclude Include="Header\phykit\AShape.h" />
     <ClInclude Include="Header\prime\Debug.h" />
+    <ClInclude Include="Header\prime\ObjectManager.h" />
     <ClInclude Include="Header\prime\ResourceManager.h" />
+    <ClInclude Include="Header\prime\Tester1.h" />
     <ClInclude Include="Header\prime\Window.h" />
-    <ClInclude Include="Math.h" />
+    <ClInclude Include="Header\util\Math.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\MapEditor_v2\MapEditor_v2\rooms\global.room" />

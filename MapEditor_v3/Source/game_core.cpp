@@ -73,7 +73,7 @@ void wl::game_core::processEvents()
         win->processEvents(event);
         debug->processEvents(event);
         //wl::SceneManager::getInstance()->processEvents(event);
-        //wl::Tester1::getInstance()->processEvents(event);  
+        wl::Tester1::getInstance()->processEvents(event);  
         ///wl::Tester2::getInstance()->processEvents(event);
         ///wl::Tester3::getInstance()->processEvents(event);
     }
@@ -82,6 +82,7 @@ void wl::game_core::processEvents()
 void wl::game_core::update(sf::Time deltaTime)
 {
     debug->update(deltaTime);
+    wl::Tester1::getInstance()->update(deltaTime);
 }
 
 void wl::game_core::render()
@@ -89,7 +90,7 @@ void wl::game_core::render()
     win->clear(sf::Color(22, 22, 22));
     win->draw(*debug);
     //wl::Window::getInstance()->draw(*wl::SceneManager::getInstance());
-    //wl::Window::getInstance()->draw(*wl::Tester1::getInstance());
+    wl::Window::getInstance()->draw(*wl::Tester1::getInstance());
     //wl::Window::getInstance()->draw(*wl::Tester2::getInstance());
     //wl::Window::getInstance()->draw(*wl::Tester3::getInstance());
     win->display();

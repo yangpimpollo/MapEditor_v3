@@ -16,6 +16,12 @@ void wl::Window::processEvents(sf::Event event)
 		this->close();
 }
 
+sf::Vector2f wl::Window::getCursorPos()
+{
+	sf::Vector2i mouse_pos_i = sf::Mouse::getPosition(*this);
+	return sf::Vector2f(static_cast<float>(mouse_pos_i.x), static_cast<float>(mouse_pos_i.y));
+}
+
 wl::Window::Window()
 {
 	std::cout << "create game window" << std::endl;

@@ -17,7 +17,8 @@ namespace wl
 		static wl::Window* getInstance();
 		void processEvents(sf::Event event);
 
-		inline sf::Vector2i getCursorPos() { return sf::Mouse::getPosition(*this); };
+		//inline sf::Vector2i getCursorPos() { return sf::Mouse::getPosition(*this); };
+		sf::Vector2f getCursorPos();
 		inline void setDefaultCursor() { this->setMouseCursor(cursor); };
 
 	private:
