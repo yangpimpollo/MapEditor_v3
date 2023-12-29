@@ -13,21 +13,6 @@ wl::ObjectManager* wl::ObjectManager::getInstance()
 
 void wl::ObjectManager::loadRoomObjects(std::string name)
 {
-	//as1 = AShape(
-	//	sf::Vector2f(200.f, 200.f),
-	//	sf::Vector2f(100.f, 100.f),
-	//	&res->getTexture("scene1", "pixel5"),
-	//	200.f
-	//);
-
-	//as2 = AShape(
-	//	sf::Vector2f(400.f, 200.f),
-	//	sf::Vector2f(100.f, 100.f),
-	//	&res->getTexture("scene1", "pixel2"),
-	//	200.f
-	//);
-
-	//-------------------------------------------------------------
 	std::vector<std::string> str_object = res->getObjects(name);
 
 	for (int i = 0; i < str_object.size(); i++) {
@@ -49,26 +34,47 @@ void wl::ObjectManager::loadRoomObjects(std::string name)
 			_id
 		);
 
+		dynamic_cast<wl::AShape*>(allObjects[_id])->setTexId(_tex);
+
 		intervals.push_back(std::make_pair(_id, _z));
 	}
 }
 
+void wl::ObjectManager::saveRoomObjects()
+{
+	std::vector<std::string> str_object;
+
+	for (int i = 0; i < allObjects.size(); i++) {
+
+		//<object id = '_@glRuS233' x = '200' y = '200' z = '200' w = '100' h = '100' tex = 'pixel5' / >
+
+		std::string s1 = "  <object id='" + allObjects.at(intervals[i].first)->getID();
+		std::string s2 = "' x = '" + std::to_string(allObjects.at(intervals[i].first)->getPosition().x);
+		std::string s3 = "' y = '" + std::to_string(allObjects.at(intervals[i].first)->getPosition().y);
+		std::string s4 = "' z = '" + std::to_string(allObjects.at(intervals[i].first)->getZbuffer());
+		std::string s5 = "' w = '" + std::to_string(allObjects.at(intervals[i].first)->getSize().x);
+		std::string s6 = "' h = '" + std::to_string(allObjects.at(intervals[i].first)->getSize().y);
+		std::string s7 = "' tex = '" + dynamic_cast<wl::AShape*>(allObjects.at(intervals[i].first))->getTexId();
+		std::string s8 = "' / >";
+
+		str_object.push_back(s1+s2+s3+s4+s5+s6+s7+s8);
+	}
+}
+
+void wl::ObjectManager::deleteObject(std::string id)
+{
+	allObjects.erase(id);
+	auto it = find_if(intervals.begin(), intervals.end(), [&](std::pair<std::string, float> interval) {
+		return interval.first == id;
+		});
+	if (it != intervals.end()) intervals.erase(it);
+}
+
 void wl::ObjectManager::update(sf::Time deltaTime)
 {
-	
-	//as1.update(deltaTime);
-	//as2.update(deltaTime);
-
-	//----------------------------------
-
 	for (int i = 0; i < allObjects.size(); i++) {
 		allObjects.at(intervals[i].first)->update(deltaTime);
 		intervals[i].second = allObjects.at(intervals[i].first)->getZbuffer();
-
-		//if (dynamic_cast<wl::AShape*>(allObjects.at(intervals[i].first))->getIsDelete()) {
-		//	allObjects.erase(intervals[i].first);
-		//	intervals.erase(intervals.begin() + i);
-		//}
 	}
 
 	selectionSort(intervals);
@@ -76,22 +82,11 @@ void wl::ObjectManager::update(sf::Time deltaTime)
 
 void wl::ObjectManager::processEvents(sf::Event event)
 {
-	
-	//as1.processEvents(event);
-	//as2.processEvents(event);
-
-	//-----------------------------------
-
 
 }
 
 void wl::ObjectManager::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	//target.draw(this->as1);
-	//target.draw(this->as2);
-
-	//-----------------------------------
-
 	for (int i = 0; i < allObjects.size(); i++) {
 		target.draw(*allObjects.at(intervals[i].first));
 	}

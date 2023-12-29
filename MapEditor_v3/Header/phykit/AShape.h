@@ -16,10 +16,13 @@ namespace wl
 		void processEvents(sf::Event event);
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+		inline void setTexId(std::string arg) { this->texid = arg; };
+		inline std::string getTexId() { return texid; };
 
 	private:
 		sf::RectangleShape rectShape;
 		sf::Texture tex;
+		std::string texid;
 	};
 
 

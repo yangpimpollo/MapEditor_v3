@@ -40,6 +40,37 @@ void wl::ResourceManager::loadRoom(std::string name)
 
 void wl::ResourceManager::saveRoom(std::string name)
 {
+	std::vector<std::string> save_datatext;
+	
+	//------------- make file -------------
+	save_datatext.push_back("");
+	for(int i = 0; i < str_header.at(name).size() - 1 ; i++) save_datatext.push_back(str_header.at(name)[i]);
+	save_datatext.push_back("");
+	save_datatext.push_back(str_header.at(name).back());
+	save_datatext.push_back("");
+	for (const auto& [key, valuePair] : font.at(name)) save_datatext.push_back(valuePair.first);
+	for (const auto& [key, valuePair] : texture.at(name)) save_datatext.push_back(valuePair.first);
+	for (const auto& [key, valuePair] : sound.at(name)) save_datatext.push_back(valuePair.first);
+	save_datatext.push_back("");
+	for (const std::string& str : str_string.at(name)) save_datatext.push_back(str);
+	save_datatext.push_back("");
+
+	save_datatext.push_back("");
+	save_datatext.push_back("</room>");
+	//-------------------------------------
+
+	std::cout << "save scene:" << name << " resources" << std::endl;
+
+	std::ofstream initFile;
+	initFile.open("./rooms/" + name + ".room", std::ios::out);
+
+	if (!initFile) {
+		std::cout << "Error occurred: file not loaded" << std::endl;
+		exit(-1);
+	}
+
+
+	initFile.close();
 }
 
 void wl::ResourceManager::closeRoom(std::string name)

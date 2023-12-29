@@ -11,7 +11,6 @@ wl::AEditTool::AEditTool()
 	zShape.setOutlineThickness(1.f);
 	zShape.setOutlineColor(color);
 
-	//zLine.setSize(sf::Vector2f(1.f, z_module));
 	zLine.setFillColor(color);
 
 	//--------------------------
@@ -168,7 +167,9 @@ void wl::AEditTool::processEvents(sf::Event event)
 
 		if (activeEdit) {
 			if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Key::D) {
-				isDelete = true;
+				obj_mng->deleteObject(selectEnt->getID());
+				activeEdit = false;
+				isSelected = false;
 				std::cout << "delete: " << selectEnt->getID() << std::endl;
 			}
 		}

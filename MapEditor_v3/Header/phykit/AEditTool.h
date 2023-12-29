@@ -34,7 +34,6 @@ namespace wl
 		bool isScale = false;
 		bool isDragZQuad = false;
 		bool isSelected = false;
-		bool isDelete = false;
 		float z_moduleOffset0;
 		sf::Vector2f mouseOffset;
 		sf::Vector2f sizeOffset;

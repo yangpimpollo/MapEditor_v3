@@ -21,6 +21,8 @@ namespace wl
 	public:
 		static wl::ObjectManager* getInstance();
 		void loadRoomObjects(std::string name);
+		void saveRoomObjects();
+		void deleteObject(std::string id);
 
 		void update(sf::Time deltaTime);
 		void processEvents(sf::Event event);
@@ -28,9 +30,6 @@ namespace wl
 
 		inline std::map<std::string, wl::AEntity*>* getAllobj() { return &allObjects; };
 		inline std::vector<std::pair <std::string, float>>* getIntervals() { return &intervals; };
-
-
-		//inline AEntity* getObject() { return &as1; }; /////temp
 
 
 	private:
@@ -43,9 +42,6 @@ namespace wl
 
 		std::string findLabel(std::string name, std::string arg);
 		void selectionSort(std::vector<std::pair <std::string, float>>& array);
-
-
-		//wl::AShape as1, as2;
 		
 
 	};
