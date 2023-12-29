@@ -26,7 +26,11 @@ namespace wl
 		void processEvents(sf::Event event);
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-		inline AEntity* getObject() { return &as1; }; /////temp
+		inline std::map<std::string, wl::AEntity*>* getAllobj() { return &allObjects; };
+		inline std::vector<std::pair <std::string, float>>* getIntervals() { return &intervals; };
+
+
+		//inline AEntity* getObject() { return &as1; }; /////temp
 
 
 	private:
@@ -34,15 +38,14 @@ namespace wl
 		~ObjectManager();
 		static wl::ObjectManager* instance_;
 
-		//////std::map<std::string, wl::APhyObject*> allObjects;
-		////////std::vector<wl::APhyObject*> allObjects;
-		//////std::vector<std::pair <std::string, float>> intervals;
+		std::map<std::string, wl::AEntity*> allObjects;
+		std::vector<std::pair <std::string, float>> intervals;
 
 		std::string findLabel(std::string name, std::string arg);
 		void selectionSort(std::vector<std::pair <std::string, float>>& array);
 
 
-		wl::AShape as1, as2;
+		//wl::AShape as1, as2;
 		
 
 	};
