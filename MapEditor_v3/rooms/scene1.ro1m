@@ -1,0 +1,22 @@
+
+<!--  ............... this is a comment ............... -->
+
+<room name='scene1'>
+
+	<texture id='coin' dat='coin.png' />
+	<texture id='pixel1' dat='pixel1.jpg' />
+	<texture id='pixel2' dat='pixel2.jpeg' />
+	<texture id='pixel3' dat='pixel3.jpg' />
+	<texture id='pixel4' dat='pixel4.jpg' />
+	<texture id='pixel5' dat='pixel5.jpg' />
+	<texture id='tex1' dat='tex1.jpg' />
+	<texture id='tex2' dat='tex2.png' />
+	<texture id='tex3' dat='tex3.png' />
+
+
+        <object id='_@0lwRR12a' x='41.000000' y='112.000000' z='112.000000' w='840.000000' h='384.000000' tex='tex2' />
+        <object id='_@apluSw4Q' x='42.000000' y='385.000000' z='385.000000' w='838.000000' h='78.000000' tex='tex1' />
+        <object id='_@LL1S234R' x='253.000000' y='214.000000' z='404.000000' w='131.000000' h='194.000000' tex='tex3' />
+        <object id='_@glRuS233' x='73.000000' y='444.000000' z='444.000000' w='100.000000' h='100.000000' tex='pixel5' />
+
+</room>

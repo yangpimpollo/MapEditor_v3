@@ -15,6 +15,7 @@ wl::Tester1::Tester1()
 	viewTest.setViewport(sf::FloatRect(0.f, 0.f, 1.f, 1.f));
 	//-----------
 
+	res->loadRoom("scene1");
 	obj_mng->loadRoomObjects("scene1");
 }
 
@@ -35,10 +36,25 @@ void wl::Tester1::processEvents(sf::Event event)
 		viewTest.setSize(event.size.width, event.size.height);
 		viewTest.setCenter(event.size.width / 2, event.size.height / 2);
 	}
+	//--------------------------
+
+	if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Key::S) {
+		std::cout << "Save Scene . . . " << std::endl;
+		res->setObjects("scene1", obj_mng->getRoomObjects_str());
+		res->saveRoom("scene1");
+
+	}
+
+	if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Key::L) {
+		res->listRes("scene1");
+
+	}
 
 	//--------------------------
 	miTool.processEvents(event);
 	obj_mng->processEvents(event);
+
+
 }
 
 void wl::Tester1::draw(sf::RenderTarget& target, sf::RenderStates states) const

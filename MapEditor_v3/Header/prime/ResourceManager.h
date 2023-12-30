@@ -13,6 +13,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+//#include "prime/ObjectManager.h"
+
 #define res wl::ResourceManager::getInstance()
 
 namespace wl
@@ -30,6 +32,9 @@ namespace wl
 
 		void importRes(std::string name, std::string datatext);
 		void deleteRes(std::string name, Type type, std::string id);
+		void listRes(std::string name);
+
+		inline void setObjects(std::string name, std::vector<std::string> arg) { str_object[name] = arg;  };
 
 		inline sf::Font& getFont(std::string name, std::string id) { return font.at(name).at(id).second; };
 		inline sf::Texture& getTexture(std::string name, std::string id) { return texture.at(name).at(id).second; };

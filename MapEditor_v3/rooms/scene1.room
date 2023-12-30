@@ -1,10 +1,9 @@
 
-<!---->
 <!--  ............... this is a comment ............... -->
-<!---->
 
 <room name='scene1'>
 
+	<texture id='coin' dat='coin.png' />
 	<texture id='pixel1' dat='pixel1.jpg' />
 	<texture id='pixel2' dat='pixel2.jpeg' />
 	<texture id='pixel3' dat='pixel3.jpg' />
@@ -13,15 +12,14 @@
 	<texture id='tex1' dat='tex1.jpg' />
 	<texture id='tex2' dat='tex2.png' />
 	<texture id='tex3' dat='tex3.png' />
-	<texture id='coin' dat='coin.png' />
-	
-	<object id='_@glRuS233' x='200' y='200' z='200' w='100' h='100' tex='pixel5' />
-	<object id='_@apluSw4Q' x='200' y='300' z='300' w='100' h='100' tex='tex1' />
-	<object id='_@0lwRR12a' x='200' y='400' z='400' w='100' h='100' tex='tex2' />
-	<object id='_@LL1S234R' x='200' y='500' z='500' w='100' h='100' tex='tex3' />
 
-	<!--<sound id='momm' dat='momm.wav' />-->
-	<!--<sound id='ff' dat='ff.wav' />-->
-	<!--<sound id='start' dat='start.ogg' />-->
+	<string id='title' EN='Dragon_Knight' ZH='龍騎士' SP='Caballero_Dragón' />
+	<string id='continue' EN='continue' ZH='繼續' SP='continuar' />
+	<string id='new game' EN='new game' ZH='新游戲 2 bio' SP='nueva partida' />
+
+    <object id='_@0lwRR12a' x='41.000000' y='112.000000' z='112.000000' w='840.000000' h='384.000000' tex='tex2' />
+    <object id='_@glRuS233' x='522.000000' y='57.000000' z='126.000000' w='242.000000' h='202.000000' tex='pixel5' />
+    <object id='_@apluSw4Q' x='42.000000' y='385.000000' z='385.000000' w='838.000000' h='78.000000' tex='tex1' />
+    <object id='_@LL1S234R' x='253.000000' y='214.000000' z='404.000000' w='131.000000' h='194.000000' tex='tex3' />
 
 </room>

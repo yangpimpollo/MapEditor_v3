@@ -24,7 +24,7 @@ void wl::game_core::start()
 void wl::game_core::init()
 {
     res->loadRoom("global");
-    res->loadRoom("scene1");
+    
 }
 
 void wl::game_core::cicles()

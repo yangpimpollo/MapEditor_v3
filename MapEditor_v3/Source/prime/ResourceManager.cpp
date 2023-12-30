@@ -48,13 +48,13 @@ void wl::ResourceManager::saveRoom(std::string name)
 	save_datatext.push_back("");
 	save_datatext.push_back(str_header.at(name).back());
 	save_datatext.push_back("");
-	for (const auto& [key, valuePair] : font.at(name)) save_datatext.push_back(valuePair.first);
-	for (const auto& [key, valuePair] : texture.at(name)) save_datatext.push_back(valuePair.first);
-	for (const auto& [key, valuePair] : sound.at(name)) save_datatext.push_back(valuePair.first);
+	if (font.contains(name)) for (const auto& [key, valuePair] : font.at(name)) save_datatext.push_back(valuePair.first);
+	if (texture.contains(name)) for (const auto& [key, valuePair] : texture.at(name)) save_datatext.push_back(valuePair.first);
+	if (sound.contains(name)) for (const auto& [key, valuePair] : sound.at(name)) save_datatext.push_back(valuePair.first);
 	save_datatext.push_back("");
-	for (const std::string& str : str_string.at(name)) save_datatext.push_back(str);
+	if (str_string.contains(name)) for (const std::string& str : str_string.at(name)) save_datatext.push_back(str);
 	save_datatext.push_back("");
-
+	if (str_object.contains(name)) for (const std::string& str : str_object.at(name)) save_datatext.push_back(str);
 	save_datatext.push_back("");
 	save_datatext.push_back("</room>");
 	//-------------------------------------
@@ -69,8 +69,10 @@ void wl::ResourceManager::saveRoom(std::string name)
 		exit(-1);
 	}
 
-
+	for (const std::string& str : save_datatext) initFile << str << std::endl;
 	initFile.close();
+
+	std::cout << "Save Scene . . . complete" << std::endl;
 }
 
 void wl::ResourceManager::closeRoom(std::string name)
@@ -178,6 +180,25 @@ void wl::ResourceManager::deleteRes(std::string name, Type type, std::string id)
 	case Type::Object: break;
 	default: break;
 	}
+}
+
+void wl::ResourceManager::listRes(std::string name)
+{
+	std::cout << "list res" << std::endl;
+
+	if (!font.empty()) {
+		if (font.contains(name)) {
+			for (const auto& [key, valuePair] : font.at(name)) std::cout << "-" << valuePair.first << std::endl;
+		}
+		else {
+			std::cout << "font .at(name) empty" << std::endl;
+		}
+	}
+	else {
+		std::cout << "font empty" << std::endl;
+	}
+	if (!texture.at(name).empty()) for (const auto& [key, valuePair] : texture.at(name)) std::cout << "-" << valuePair.first << std::endl;
+	std::cout << "-------------------" << std::endl;
 }
 
 //----------------------------- tools -------------------------------

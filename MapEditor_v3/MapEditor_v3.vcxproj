@@ -166,8 +166,8 @@
     <ClInclude Include="Header\util\Math.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\MapEditor_v2\MapEditor_v2\rooms\global.room" />
-    <None Include="..\..\MapEditor_v2\MapEditor_v2\rooms\scene1.room" />
+    <None Include="rooms\global.room" />
+    <None Include="rooms\scene1.room" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

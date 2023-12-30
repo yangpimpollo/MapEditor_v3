@@ -21,7 +21,7 @@ namespace wl
 	public:
 		static wl::ObjectManager* getInstance();
 		void loadRoomObjects(std::string name);
-		void saveRoomObjects();
+		std::vector<std::string> getRoomObjects_str();
 		void deleteObject(std::string id);
 
 		void update(sf::Time deltaTime);

@@ -97,10 +97,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\MapEditor_v2\MapEditor_v2\rooms\global.room">
+    <None Include="rooms\global.room">
       <Filter>Resource Files\rooms</Filter>
     </None>
-    <None Include="..\..\MapEditor_v2\MapEditor_v2\rooms\scene1.room">
+    <None Include="rooms\scene1.room">
       <Filter>Resource Files\rooms</Filter>
     </None>
   </ItemGroup>

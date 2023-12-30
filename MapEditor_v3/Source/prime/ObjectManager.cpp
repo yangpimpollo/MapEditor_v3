@@ -40,7 +40,7 @@ void wl::ObjectManager::loadRoomObjects(std::string name)
 	}
 }
 
-void wl::ObjectManager::saveRoomObjects()
+std::vector<std::string> wl::ObjectManager::getRoomObjects_str()
 {
 	std::vector<std::string> str_object;
 
@@ -48,17 +48,18 @@ void wl::ObjectManager::saveRoomObjects()
 
 		//<object id = '_@glRuS233' x = '200' y = '200' z = '200' w = '100' h = '100' tex = 'pixel5' / >
 
-		std::string s1 = "  <object id='" + allObjects.at(intervals[i].first)->getID();
-		std::string s2 = "' x = '" + std::to_string(allObjects.at(intervals[i].first)->getPosition().x);
-		std::string s3 = "' y = '" + std::to_string(allObjects.at(intervals[i].first)->getPosition().y);
-		std::string s4 = "' z = '" + std::to_string(allObjects.at(intervals[i].first)->getZbuffer());
-		std::string s5 = "' w = '" + std::to_string(allObjects.at(intervals[i].first)->getSize().x);
-		std::string s6 = "' h = '" + std::to_string(allObjects.at(intervals[i].first)->getSize().y);
-		std::string s7 = "' tex = '" + dynamic_cast<wl::AShape*>(allObjects.at(intervals[i].first))->getTexId();
-		std::string s8 = "' / >";
+		std::string s1 = "    <object id='" + allObjects.at(intervals[i].first)->getID();
+		std::string s2 = "' x='" + std::to_string(allObjects.at(intervals[i].first)->getPosition().x);
+		std::string s3 = "' y='" + std::to_string(allObjects.at(intervals[i].first)->getPosition().y);
+		std::string s4 = "' z='" + std::to_string(allObjects.at(intervals[i].first)->getZbuffer());
+		std::string s5 = "' w='" + std::to_string(allObjects.at(intervals[i].first)->getSize().x);
+		std::string s6 = "' h='" + std::to_string(allObjects.at(intervals[i].first)->getSize().y);
+		std::string s7 = "' tex='" + dynamic_cast<wl::AShape*>(allObjects.at(intervals[i].first))->getTexId();
+		std::string s8 = "' />";
 
 		str_object.push_back(s1+s2+s3+s4+s5+s6+s7+s8);
 	}
+	return str_object;
 }
 
 void wl::ObjectManager::deleteObject(std::string id)
