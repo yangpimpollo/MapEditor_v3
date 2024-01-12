@@ -25,6 +25,8 @@ void wl::ObjectManager::loadRoomObjects(std::string name)
 		float _z = std::stof(findLabel("z", str_object[i]));
 		float _w = std::stof(findLabel("w", str_object[i]));
 		float _h = std::stof(findLabel("h", str_object[i]));
+		std::string _u = findLabel("u", str_object[i]);
+		std::cout << "uuuu" << _u << std::endl;
 
 		allObjects[_id] = new wl::AShape(
 			sf::Vector2f(_x, _y),
@@ -34,10 +36,21 @@ void wl::ObjectManager::loadRoomObjects(std::string name)
 			_id
 		);
 
+		//dynamic_cast<wl::AShape*>(allObjects[_id])->
+
 		dynamic_cast<wl::AShape*>(allObjects[_id])->setTexId(_tex);
 
 		intervals.push_back(std::make_pair(_id, _z));
 	}
+
+	//coin = new wl::AShape();
+	dynamic_cast<wl::AShape*>(allObjects.at("_@coin"))->setAnimation(
+		&res->getTexture(name, "coin"), 
+		sf::Vector2f(100, 100),
+		7,
+		sf::microseconds(200000)
+		);
+
 }
 
 std::vector<std::string> wl::ObjectManager::getRoomObjects_str()

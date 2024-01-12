@@ -43,7 +43,7 @@ namespace wl
 		std::string findLabel(std::string name, std::string arg);
 		void selectionSort(std::vector<std::pair <std::string, float>>& array);
 		
-
+		wl::AShape* coin;
 	};
 
 

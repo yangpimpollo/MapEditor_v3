@@ -3,6 +3,7 @@
 #define ASHAPE_H_INCLUDED
 
 #include "phykit/AEntity.h"
+#include "util/Animation.h"
 
 namespace wl
 {
@@ -15,11 +16,13 @@ namespace wl
 		void update(sf::Time deltaTime);
 		void processEvents(sf::Event event);
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+		void setAnimation(sf::Texture* tex, sf::Vector2f frameSize, int framesNum, sf::Time switchTime);
 
 		inline void setTexId(std::string arg) { this->texid = arg; };
 		inline std::string getTexId() { return texid; };
 
 	private:
+		wl::Animation anim;
 		sf::RectangleShape rectShape;
 		sf::Texture tex;
 		std::string texid;

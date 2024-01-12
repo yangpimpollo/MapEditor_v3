@@ -1,5 +1,11 @@
 
+<!-- -->
 <!--  ............... this is a comment ............... -->
+<!-- -->
+<!-- -->
+<!-- <sound id='momm' dat='momm.wav' />-->
+<!-- <sound id='ff' dat='ff.wav' />-->
+<!-- <sound id='start' dat='start.ogg' />-->
 
 <room name='scene1'>
 
@@ -18,8 +24,9 @@
 	<string id='new game' EN='new game' ZH='新游戲 2 bio' SP='nueva partida' />
 
     <object id='_@0lwRR12a' x='41.000000' y='112.000000' z='112.000000' w='840.000000' h='384.000000' tex='tex2' />
-    <object id='_@glRuS233' x='522.000000' y='57.000000' z='126.000000' w='242.000000' h='202.000000' tex='pixel5' />
     <object id='_@apluSw4Q' x='42.000000' y='385.000000' z='385.000000' w='838.000000' h='78.000000' tex='tex1' />
     <object id='_@LL1S234R' x='253.000000' y='214.000000' z='404.000000' w='131.000000' h='194.000000' tex='tex3' />
+    <object id='_@coin' x='331.000000' y='392.000000' z='436.000000' w='30.000000' h='30.000000' tex='coin' />
+    <object id='_@glRuS233__AMBER' x='66.000000' y='447.000000' z='516.000000' w='125.000000' h='127.000000' tex='pixel5' />
 
 </room>

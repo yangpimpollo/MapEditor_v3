@@ -46,8 +46,8 @@ void wl::Tester1::processEvents(sf::Event event)
 	}
 
 	if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Key::L) {
-		res->listRes("scene1");
-
+		//res->listRes("scene1");
+		std::cout << "tex size " << res->getTexture("scene1","tex3").getSize().y << std::endl;
 	}
 
 	//--------------------------

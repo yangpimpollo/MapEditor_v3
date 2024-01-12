@@ -13,8 +13,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-//#include "prime/ObjectManager.h"
-
 #define res wl::ResourceManager::getInstance()
 
 namespace wl

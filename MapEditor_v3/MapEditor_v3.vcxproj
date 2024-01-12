@@ -163,6 +163,7 @@
     <ClInclude Include="Header\prime\ResourceManager.h" />
     <ClInclude Include="Header\prime\Tester1.h" />
     <ClInclude Include="Header\prime\Window.h" />
+    <ClInclude Include="Header\util\Animation.h" />
     <ClInclude Include="Header\util\Math.h" />
   </ItemGroup>
   <ItemGroup>

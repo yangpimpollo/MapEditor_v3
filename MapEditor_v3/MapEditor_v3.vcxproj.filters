@@ -95,6 +95,9 @@
     <ClInclude Include="Header\prime\ObjectManager.h">
       <Filter>Header Files\prime</Filter>
     </ClInclude>
+    <ClInclude Include="Header\util\Animation.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="rooms\global.room">

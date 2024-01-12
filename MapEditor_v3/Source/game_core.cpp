@@ -23,8 +23,7 @@ void wl::game_core::start()
 
 void wl::game_core::init()
 {
-    res->loadRoom("global");
-    
+    res->loadRoom("global");    
 }
 
 void wl::game_core::cicles()
