@@ -42,8 +42,18 @@ void wl::ObjectManager::loadRoomObjects(std::string name)
 
 		intervals.push_back(std::make_pair(_id, _z));
 	}
+	sf::IntRect r;
+	r.left = 5;
+	//coin = new wl::AShape(
+	//	sf::Vector2f(300, 20),
+	//	sf::Vector2f(100, 100),
+	//	20,
+	//	"_@BOX"
+	//);
+	//allObjects["_@BOX"] = coin;
+	//intervals.push_back(std::make_pair("_@BOX", 20));
 
-	//coin = new wl::AShape();
+
 	dynamic_cast<wl::AShape*>(allObjects.at("_@coin"))->setAnimation(
 		&res->getTexture(name, "coin"), 
 		sf::Vector2f(100, 100),

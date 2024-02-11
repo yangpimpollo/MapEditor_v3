@@ -3,13 +3,24 @@
 wl::AShape::AShape() { }
 wl::AShape::~AShape() { }
 
+wl::AShape::AShape(sf::Vector2f position, sf::Vector2f size, float z, std::string id)
+	: wl::AEntity(position, size, id)
+{
+	setZbuffer(z);
+	rectShape.setPosition(position);
+	rectShape.setSize(size);
+	rectShape.setFillColor(sf::Color(0, 255, 0, 50));
+	rectShape.setOutlineThickness(1.f);
+	rectShape.setOutlineColor(sf::Color::Green);
+}
+
 wl::AShape::AShape(sf::Vector2f position, sf::Vector2f size, sf::Texture* tex, float z, std::string id)
 	: wl::AEntity(position, size, id), tex(*tex)
 {
 	setZbuffer(z);
 	rectShape.setPosition(position);
 	rectShape.setSize(size);
-	rectShape.setTexture(tex); anim = wl::Animation();
+	rectShape.setTexture(tex);
 }
 
 void wl::AShape::update(sf::Time deltaTime)

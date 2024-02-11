@@ -12,6 +12,7 @@ namespace wl
 	public:
 		AShape();
 		~AShape();
+		AShape(sf::Vector2f position, sf::Vector2f size, float z, std::string id = "");
 		AShape(sf::Vector2f position, sf::Vector2f size, sf::Texture* tex, float z, std::string id = "");
 		void update(sf::Time deltaTime);
 		void processEvents(sf::Event event);

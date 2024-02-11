@@ -83,16 +83,20 @@ void wl::AEditTool::processEvents(sf::Event event)
 			if ((*obj_mng->getAllobj()).at((*obj_mng->getIntervals())[i].first)->CursorIn()) {
 				selectEnt = (*obj_mng->getAllobj()).at((*obj_mng->getIntervals())[i].first);
 				break;
+			}else {
+				selectEnt = nullptr;
 			}
 		}
+		
 	}
 
 	if (selectEnt != nullptr) {
 		_position = selectEnt->getPosition();
 		_size = selectEnt->getSize();
 		_z_module = selectEnt->getZModule();
-
+		//std::cout << "click-hovered: " << selectEnt->getID() << std::endl;
 		if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+			
 			if (selectEnt->CursorInZgizmo()) {
 				isDragZQuad = true;
 				mouseOffset = win->getCursorPos();
@@ -104,12 +108,12 @@ void wl::AEditTool::processEvents(sf::Event event)
 				sizeOffset = _size;
 			}
 			else if (selectEnt->CursorIn()) {
-				isDragging = true;
+				isDragging = true; std::cout << "click-preess" << std::endl;
 				mouseOffset = win->getCursorPos() - _position;
 			}
 		}
 		else if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left) {
-			//std::cout << "click" << std::endl;
+			std::cout << "click-relead" << std::endl;
 			isSelected = (selectEnt->CursorIn() || selectEnt->CursorInZgizmo()) ? true : false;
 			mouseOffset = sf::Vector2f(0.f, 0.f);
 			isDragging = false;
